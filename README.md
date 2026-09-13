@@ -15,25 +15,20 @@ ezHairSwap 把這條路縮成：**自己的照片 + 想要的髮型 → 先試�
 
 ## 先看 Demo
 
-這支影片來自 `3d-model/video-demo/螢幕錄影 2026-09-14 凌晨12.56.43.mov`，已轉成 GitHub 可播放的 MP4（README 不支援直接內嵌 `.mov`）。
+來源：`3d-model/video-demo/螢幕錄影 2026-09-14 凌晨12.56.43.mov`（GitHub README **無法直接內嵌 `.mov`**，下方 GIF 由同一支錄影轉出）。
 
 **bombhair 換到女生頭上 → 四視角試看 → 展開 3D bust 旋轉**
 
 <p align="center">
-  <video
-    src="https://github.com/Giorno-Giovanna-Dio/ezHairSwap/raw/main/docs/demo/try-on-3d-demo.mp4"
-    width="420"
-    controls
-    autoplay
-    muted
-    loop
-    playsinline
-    poster="https://github.com/Giorno-Giovanna-Dio/ezHairSwap/raw/main/docs/demo/try-on-3d-demo-poster.jpg"
-  ></video>
+  <img src="docs/demo/try-on-3d-demo.gif" alt="ezHairSwap demo：bombhair 試髮、四視角、3D 人像" width="420" />
 </p>
 
 <p align="center">
-  <sub>2D 試髮轉盤 · 可收合的 3D 人像檢視器 · <a href="docs/demo/try-on-3d-demo.mp4">若無法播放，點此開啟 MP4</a></sub>
+  <sub>
+    2D 試髮轉盤 · 可收合的 3D 人像檢視器 ·
+    <a href="docs/demo/try-on-3d-demo.mp4">MP4</a> ·
+    <a href="3d-model/video-demo/%E8%9E%A2%E5%B9%95%E9%8C%84%E5%BD%B1%202026-09-14%20%E5%87%8C%E6%99%A812.56.43.mov">原始 MOV</a>
+  </sub>
 </p>
 
 👉 **[打開 Live Demo](https://giorno-giovanna-dio.github.io/ezHairSwap/)**（需已啟用 GitHub Pages，見下方說明）
