@@ -98,7 +98,7 @@ export const copy = {
     "salon.nowDesc":
       "然後設計師可以直接說：做到這個長度大概會像這樣；後面再加 Layer；瀏海不要這麼厚。",
     "foot.tag": "ezHairSwap · try-on, then booking",
-    "foot.modelLabel": "需要轉給設計師看時，再打開立體的她",
+    "foot.modelLabel": "看驚喜",
     "foot.modelExpand": "展開 3D 人像",
     "foot.modelCollapse": "收起 3D 人像",
     "foot.bar": "先試髮，再預約。KPI 是 Try-on → Booking。",
@@ -202,7 +202,7 @@ export const copy = {
     "salon.nowDesc":
       "Then the stylist can say: at this length it will look like this; add layers in back; keep bangs thinner.",
     "foot.tag": "ezHairSwap · try-on, then booking",
-    "foot.modelLabel": "Open the 3D view when the stylist needs depth",
+    "foot.modelLabel": "See the surprise",
     "foot.modelExpand": "Show 3D portrait",
     "foot.modelCollapse": "Hide 3D portrait",
     "foot.bar": "Try on first, book next. KPI: Try-on → Booking.",

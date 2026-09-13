@@ -35,6 +35,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: clip;
   color: var(--ink);
   background: var(--paper);
   font-family: var(--font);
@@ -59,7 +60,8 @@ a {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 12px var(--gutter);
+  padding: 12px max(var(--gutter), env(safe-area-inset-right))
+    12px max(var(--gutter), env(safe-area-inset-left));
   background: #fff;
   box-shadow: 0 1px 0 var(--line);
 }
@@ -764,7 +766,8 @@ h2 {
 
 .foot-bar {
   margin: 0;
-  padding: 16px var(--gutter);
+  padding: 16px max(var(--gutter), env(safe-area-inset-right))
+    16px max(var(--gutter), env(safe-area-inset-left));
   background: var(--green);
   color: #fff;
   font-size: 13px;
@@ -772,13 +775,72 @@ h2 {
   text-align: center;
 }
 
+@media (max-width: 960px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .book-card {
+    padding: 22px;
+  }
+
+  .stylist h3 {
+    font-size: clamp(22px, 4.5vw, 28px);
+  }
+}
+
 @media (max-width: 800px) {
+  .nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "brand lang cta"
+      "links links links";
+    align-items: center;
+    gap: 10px 12px;
+    padding-block: 10px;
+  }
+
+  .brand {
+    grid-area: brand;
+    font-size: 20px;
+  }
+
   .nav-mid {
-    margin-left: auto;
+    display: contents;
+    margin-left: 0;
+  }
+
+  .lang-switch {
+    grid-area: lang;
+  }
+
+  .nav-cta {
+    grid-area: cta;
+    min-height: 36px !important;
+    padding: 0 12px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
   }
 
   .nav-links {
+    grid-area: links;
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .pair,
@@ -799,6 +861,11 @@ h2 {
     text-align: center;
   }
 
+  h1 {
+    max-width: none;
+    margin-inline: auto;
+  }
+
   .hero-actions {
     justify-content: center;
   }
@@ -807,6 +874,40 @@ h2 {
   .hero-copy {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .stats {
+    text-align: center;
+  }
+
+  .section-head {
+    text-align: left;
+  }
+
+  .shot figcaption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .book-btn {
+    width: 100%;
+  }
+
+  .viewer {
+    min-height: min(42vh, 360px);
+  }
+
+  .viewer canvas {
+    height: min(42vh, 360px);
+  }
+
+  .salon-grid blockquote p {
+    font-size: clamp(17px, 4vw, 20px);
+  }
+
+  .kpi {
+    padding: 22px 18px;
   }
 
   .foot-main {
@@ -818,12 +919,158 @@ h2 {
   .foot-actions {
     width: 100%;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .foot-model {
+    align-items: center;
+    width: 100%;
   }
 
   .foot-model-label {
     white-space: normal;
-    max-width: 240px;
-    text-align: right;
+    max-width: none;
+    text-align: center;
+  }
+
+  .foot-model .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    font-size: 18px;
+  }
+
+  .nav-cta {
+    font-size: 12px !important;
+    padding: 0 10px !important;
+  }
+
+  .hero {
+    padding: 36px 0 32px;
+  }
+
+  .cert {
+    font-size: 12px;
+    padding: 6px 12px 5px;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 0;
+  }
+
+  .stats-band {
+    padding: 20px 0;
+  }
+
+  .stats dd {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .eyebrow,
+  .preview-kicker,
+  .stylist-kicker,
+  .kicker {
+    font-size: 13px;
+    padding-inline: 16px;
+  }
+
+  .angle-bar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .angle {
+    width: 100%;
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  .preview .turntable {
+    padding-inline: 12px;
+  }
+
+  .hint {
+    left: 10px;
+    bottom: 10px;
+    font-size: 11px;
+  }
+
+  .book-card {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .price dd {
+    font-size: 18px;
+  }
+
+  .compare article,
+  .pad,
+  .salon-grid blockquote {
+    padding: 18px;
+  }
+
+  .viewer-ui {
+    inset: auto 12px 12px;
+    width: calc(100% - 24px);
+  }
+
+  .viewer-meta .btn {
+    width: 100%;
+  }
+
+  .foot-main {
+    padding: 22px 0;
+  }
+
+  .foot-bar {
+    font-size: 12px;
+    line-height: 1.5;
+    padding-block: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand lang"
+      "cta cta"
+      "links links";
+  }
+
+  .nav-cta {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    flex: none;
   }
 }
