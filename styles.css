@@ -82,12 +82,47 @@ a {
   background: linear-gradient(to right, var(--green), var(--green-bright));
 }
 
+.nav-mid {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
 .nav-links {
   display: flex;
   gap: 22px;
-  margin-left: auto;
   font-size: 15px;
   font-weight: 500;
+}
+
+.lang-switch {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.lang-switch button {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lang-switch button.is-on {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.lang-switch button:hover:not(.is-on) {
+  border-color: var(--green);
+  color: var(--green);
 }
 
 .nav-links a {
@@ -738,6 +773,10 @@ h2 {
 }
 
 @media (max-width: 800px) {
+  .nav-mid {
+    margin-left: auto;
+  }
+
   .nav-links {
     display: none;
   }

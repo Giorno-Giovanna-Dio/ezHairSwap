@@ -31,30 +31,39 @@
         <span class="brand-mark" aria-hidden="true"></span>
         ezHairSwap
       </a>
-      <nav class="nav-links">
-        <a href="#look">試髮</a>
-        <a href="#booking">預約前</a>
-        <a href="#salon">店內</a>
-      </nav>
-      <a class="btn btn-primary nav-cta" href="#book">預約這個造型</a>
+      <div class="nav-mid">
+        <nav class="nav-links">
+          <a href="#look" data-i18n="nav.tryOn">試髮</a>
+          <a href="#booking" data-i18n="nav.beforeBook">預約前</a>
+          <a href="#salon" data-i18n="nav.inSalon">店內</a>
+        </nav>
+        <div class="lang-switch" role="group" data-i18n-attr="aria-label:nav.lang">
+          <button type="button" data-lang="zh" aria-pressed="true">中</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+      <a class="btn btn-primary nav-cta" href="#book" data-i18n="nav.book">預約這個造型</a>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="wrap">
-          <p class="cert">美業試髮 × 預約閉環</p>
-          <h1>「我想剪這個。」<span>先看自己的樣子，再預約。</span></h1>
-          <p class="lede">
+          <p class="cert" data-i18n="hero.cert">美業試髮 × 預約閉環</p>
+          <h1>
+            <span data-i18n="hero.h1a">「我想剪這個。」</span>
+            <span data-i18n="hero.h1b">先看自己的樣子，再預約。</span>
+          </h1>
+          <p class="lede" data-i18n="hero.lede">
             即時把社群參考圖換到自己頭上，讓店家從試髮、判斷到預約全面接起來
           </p>
-          <p class="hero-copy">
+          <p class="hero-copy" data-i18n="hero.copy">
             女生在 IG、小紅書、Pinterest、Google
             存下一張參考圖。現在的旅程是存圖、找店、傳給設計師、問適不適合、再預約。我們把它縮成：自己的照片
             + 想要的髮型 → 先試，再約。
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#look">看這次試髮</a>
-            <a class="btn btn-ghost" href="#booking">看商業閉環</a>
+            <a class="btn btn-primary" href="#look" data-i18n="hero.btnTry">看這次試髮</a>
+            <a class="btn btn-ghost" href="#booking" data-i18n="hero.btnLoop">看商業閉環</a>
           </div>
         </div>
       </section>
@@ -62,15 +71,15 @@
       <section class="stats-band">
         <dl class="stats">
           <div>
-            <dt>真正的 KPI</dt>
+            <dt data-i18n="stats.kpiReal">真正的 KPI</dt>
             <dd>Try-on → Booking</dd>
           </div>
           <div>
-            <dt>不是這個</dt>
-            <dd>3D 生成成功率</dd>
+            <dt data-i18n="stats.kpiNot">不是這個</dt>
+            <dd data-i18n="stats.kpiNotVal">3D 生成成功率</dd>
           </div>
           <div>
-            <dt>今天這單</dt>
+            <dt data-i18n="stats.today">今天這單</dt>
             <dd>NT$3,200–4,500</dd>
           </div>
         </dl>
@@ -78,9 +87,9 @@
 
       <section id="look" class="section band-white">
         <div class="section-head">
-          <p class="eyebrow">上傳自己的照片 ＋ 想要的髮型</p>
-          <h2>看看你換這個髮型的樣子。</h2>
-          <p>
+          <p class="eyebrow" data-i18n="look.eyebrow">上傳自己的照片 ＋ 想要的髮型</p>
+          <h2 data-i18n="look.h2">看看你換這個髮型的樣子。</h2>
+          <p data-i18n="look.desc">
             左邊是本人，右邊是在社群存下的 bombhair。下一張就是把這頂頭髮換到她頭上的
             2D Preview。
           </p>
@@ -91,10 +100,11 @@
             <img
               src="./original-img/afu.jpg"
               alt="客人自己的照片：馬尾、黃格紋襯衫"
+              data-i18n-attr="alt:look.photoAlt"
             />
             <figcaption>
-              <span>01 自己的照片</span>
-              上傳人像
+              <span data-i18n="look.fig1span">01 自己的照片</span>
+              <span data-i18n="look.fig1">上傳人像</span>
             </figcaption>
           </figure>
           <span class="plus" aria-hidden="true">+</span>
@@ -102,9 +112,10 @@
             <img
               src="./original-img/bombhair.webp"
               alt="想剪的髮型參考：黑色爆炸頭"
+              data-i18n-attr="alt:look.hairAlt"
             />
             <figcaption>
-              <span>02 想要的髮型</span>
+              <span data-i18n="look.fig2span">02 想要的髮型</span>
               bombhair
             </figcaption>
           </figure>
@@ -120,35 +131,35 @@
                 alt="爆炸頭已經換到女生頭上，正面預覽"
                 draggable="false"
               />
-              <p class="hint">拖曳旋轉 · ← →</p>
+              <p class="hint" data-i18n="look.hint">拖曳旋轉 · ← →</p>
             </div>
-            <div class="angle-bar" role="tablist" aria-label="視角">
-              <button type="button" class="angle is-on" data-angle="0" aria-selected="true">
+            <div class="angle-bar" role="tablist" data-i18n-attr="aria-label:look.angleLabel">
+              <button type="button" class="angle is-on" data-angle="0" aria-selected="true" data-i18n="look.angle.front">
                 正面
               </button>
-              <button type="button" class="angle" data-angle="1" aria-selected="false">
+              <button type="button" class="angle" data-angle="1" aria-selected="false" data-i18n="look.angle.left">
                 左 45°
               </button>
-              <button type="button" class="angle" data-angle="2" aria-selected="false">
+              <button type="button" class="angle" data-angle="2" aria-selected="false" data-i18n="look.angle.right">
                 右 45°
               </button>
-              <button type="button" class="angle" data-angle="3" aria-selected="false">
+              <button type="button" class="angle" data-angle="3" aria-selected="false" data-i18n="look.angle.back">
                 背面
               </button>
             </div>
             <label class="auto">
               <input type="checkbox" data-auto checked />
-              自動旋轉
+              <span data-i18n="look.auto">自動旋轉</span>
             </label>
           </div>
-          <figcaption>bombhair 已經在她頭上。拖曳或自動旋轉，看側面、45° 與後面。</figcaption>
+          <figcaption data-i18n="look.caption">bombhair 已經在她頭上。拖曳或自動旋轉，看側面、45° 與後面。</figcaption>
         </figure>
       </section>
 
       <section id="book" class="section book band-mint">
         <div class="section-head">
-          <p class="eyebrow">我要這個髮型</p>
-          <h2>系統先判斷這頂頭髮，再推薦做得到的人。</h2>
+          <p class="eyebrow" data-i18n="book.eyebrow">我要這個髮型</p>
+          <h2 data-i18n="book.h2">系統先判斷這頂頭髮，再推薦做得到的人。</h2>
         </div>
 
         <div class="book-card">
@@ -160,33 +171,33 @@
             <li>Color-ready</li>
           </ul>
           <div class="stylist">
-            <p class="stylist-kicker">可以做這個髮型的設計師</p>
-            <h3>捲度重建 · 爆炸頭 / Afro</h3>
-            <p>適合想把直髮或馬尾改成量感捲度的客人。店內諮詢可再調 Layer 與瀏海厚度。</p>
+            <p class="stylist-kicker" data-i18n="book.stylistKicker">可以做這個髮型的設計師</p>
+            <h3 data-i18n="book.stylistH3">捲度重建 · 爆炸頭 / Afro</h3>
+            <p data-i18n="book.stylistDesc">適合想把直髮或馬尾改成量感捲度的客人。店內諮詢可再調 Layer 與瀏海厚度。</p>
           </div>
           <dl class="price">
             <div>
-              <dt>預估</dt>
-              <dd>NT$3,200–4,500</dd>
+              <dt data-i18n="book.priceEst">預估</dt>
+              <dd data-i18n="book.priceEstVal">NT$3,200–4,500</dd>
             </div>
             <div>
-              <dt>工時</dt>
-              <dd>約 3 小時</dd>
+              <dt data-i18n="book.priceTime">工時</dt>
+              <dd data-i18n="book.priceTimeVal">約 3 小時</dd>
             </div>
             <div>
-              <dt>類型</dt>
-              <dd>剪燙套餐</dd>
+              <dt data-i18n="book.priceType">類型</dt>
+              <dd data-i18n="book.priceTypeVal">剪燙套餐</dd>
             </div>
           </dl>
-          <a class="btn btn-primary book-btn" href="#booking">預約這個造型</a>
+          <a class="btn btn-primary book-btn" href="#booking" data-i18n="book.btn">預約這個造型</a>
         </div>
       </section>
 
       <section id="model" class="section band-white" hidden>
         <div class="section-head">
-          <p class="eyebrow">生成 3D 人像模型</p>
-          <h2>需要轉給設計師看時，再打開立體的她。</h2>
-          <p>
+          <p class="eyebrow" data-i18n="model.eyebrow">生成 3D 人像模型</p>
+          <h2 data-i18n="model.h2">需要轉給設計師看時，再打開立體的她。</h2>
+          <p data-i18n="model.desc">
             3D 是諮詢工具，不是產品的成功定義。先讓客人決定「我要這個」，模型用來把後面與層次講清楚。
           </p>
         </div>
@@ -194,16 +205,20 @@
         <div class="viewer-shell">
           <div class="viewer" id="viewer">
             <div class="viewer-ui" data-viewer-ui>
-              <p class="viewer-status" data-status>正在載入 3D 人像…</p>
+              <p class="viewer-status" data-status data-i18n="model.loading">正在載入 3D 人像…</p>
               <div class="bar" aria-hidden="true">
                 <span data-bar></span>
               </div>
             </div>
-            <canvas id="view" aria-label="可旋轉的換髮 3D 人像模型"></canvas>
+            <canvas
+              id="view"
+              aria-label="可旋轉的換髮 3D 人像模型"
+              data-i18n-attr="aria-label:model.canvasAria"
+            ></canvas>
           </div>
           <div class="viewer-meta">
-            <p>拖曳旋轉 · 滾輪縮放 · 右鍵平移</p>
-            <button type="button" class="btn btn-ghost btn-sm" data-reset>
+            <p data-i18n="model.meta">拖曳旋轉 · 滾輪縮放 · 右鍵平移</p>
+            <button type="button" class="btn btn-ghost btn-sm" data-reset data-i18n="model.reset">
               重設視角
             </button>
           </div>
@@ -212,62 +227,62 @@
 
       <section id="booking" class="section band-gray">
         <div class="section-head">
-          <p class="eyebrow">場景一 · 預約前</p>
-          <h2>這才是真正的商業閉環。</h2>
+          <p class="eyebrow" data-i18n="booking.eyebrow">場景一 · 預約前</p>
+          <h2 data-i18n="booking.h2">這才是真正的商業閉環。</h2>
         </div>
 
         <div class="compare">
           <article>
-            <p class="kicker">過去</p>
+            <p class="kicker" data-i18n="booking.past">過去</p>
             <ol>
-              <li>存圖片</li>
-              <li>找髮廊</li>
-              <li>傳給設計師</li>
-              <li>問適不適合</li>
-              <li>預約</li>
+              <li data-i18n="booking.past.1">存圖片</li>
+              <li data-i18n="booking.past.2">找髮廊</li>
+              <li data-i18n="booking.past.3">傳給設計師</li>
+              <li data-i18n="booking.past.4">問適不適合</li>
+              <li data-i18n="booking.past.5">預約</li>
             </ol>
           </article>
           <article class="is-next">
-            <p class="kicker">現在</p>
+            <p class="kicker" data-i18n="booking.now">現在</p>
             <ol>
-              <li>上傳自己的照片</li>
-              <li>上傳想要的髮型</li>
-              <li>2D Preview + 多角度</li>
-              <li>「我要這個髮型」</li>
-              <li>對的設計師 · 價格 · 預約</li>
+              <li data-i18n="booking.now.1">上傳自己的照片</li>
+              <li data-i18n="booking.now.2">上傳想要的髮型</li>
+              <li data-i18n="booking.now.3">2D Preview + 多角度</li>
+              <li data-i18n="booking.now.4">「我要這個髮型」</li>
+              <li data-i18n="booking.now.5">對的設計師 · 價格 · 預約</li>
             </ol>
           </article>
         </div>
 
         <aside class="kpi">
-          <p>KPI 不該是 3D model generation success rate。</p>
-          <p><strong>應該是 Try-on → Booking Conversion Rate。</strong></p>
+          <p data-i18n="booking.kpi1">KPI 不該是 3D model generation success rate。</p>
+          <p><strong data-i18n="booking.kpi2">應該是 Try-on → Booking Conversion Rate。</strong></p>
         </aside>
       </section>
 
       <section id="salon" class="section band-white">
         <div class="section-head">
-          <p class="eyebrow">場景二 · 店內諮詢</p>
-          <h2>客人坐下來說：「老師，我想要像這張照片。」</h2>
+          <p class="eyebrow" data-i18n="salon.eyebrow">場景二 · 店內諮詢</p>
+          <h2 data-i18n="salon.h2">客人坐下來說：「老師，我想要像這張照片。」</h2>
         </div>
 
         <div class="salon-grid">
           <blockquote>
-            <p class="kicker">過去</p>
-            <p>「妳的臉型跟她不太一樣。」</p>
-            <p>「妳頭髮長度不夠。」</p>
-            <p>「可能效果沒辦法完全一樣。」</p>
-            <footer>沒有圖，只能靠講。</footer>
+            <p class="kicker" data-i18n="salon.past">過去</p>
+            <p data-i18n="salon.past.1">「妳的臉型跟她不太一樣。」</p>
+            <p data-i18n="salon.past.2">「妳頭髮長度不夠。」</p>
+            <p data-i18n="salon.past.3">「可能效果沒辦法完全一樣。」</p>
+            <footer data-i18n="salon.pastFoot">沒有圖，只能靠講。</footer>
           </blockquote>
           <article class="pad">
-            <p class="kicker">現在</p>
-            <p class="pad-lead">店裡拿 iPad</p>
+            <p class="kicker" data-i18n="salon.now">現在</p>
+            <p class="pad-lead" data-i18n="salon.nowLead">店裡拿 iPad</p>
             <ol>
-              <li>客人照片 + Reference</li>
-              <li>大約 10 秒</li>
-              <li>客人自己的 Try-on</li>
+              <li data-i18n="salon.now.1">客人照片 + Reference</li>
+              <li data-i18n="salon.now.2">大約 10 秒</li>
+              <li data-i18n="salon.now.3">客人自己的 Try-on</li>
             </ol>
-            <p>
+            <p data-i18n="salon.nowDesc">
               然後設計師可以直接說：做到這個長度大概會像這樣；後面再加 Layer；瀏海不要這麼厚。
             </p>
           </article>
@@ -277,16 +292,17 @@
 
     <footer class="foot">
       <div class="foot-main">
-        <p>ezHairSwap · try-on, then booking</p>
+        <p data-i18n="foot.tag">ezHairSwap · try-on, then booking</p>
         <div class="foot-actions">
           <div class="foot-model">
-            <p class="foot-model-label">需要轉給設計師看時，再打開立體的她</p>
+            <p class="foot-model-label" data-i18n="foot.modelLabel">需要轉給設計師看時，再打開立體的她</p>
             <button
               type="button"
               class="btn btn-ghost btn-sm"
               data-model-toggle
               aria-expanded="false"
               aria-controls="model"
+              data-i18n="foot.modelExpand"
             >
               展開 3D 人像
             </button>
@@ -294,7 +310,7 @@
           <a href="https://github.com/Giorno-Giovanna-Dio/ezHairSwap">GitHub</a>
         </div>
       </div>
-      <p class="foot-bar">先試髮，再預約。KPI 是 Try-on → Booking。</p>
+      <p class="foot-bar" data-i18n="foot.bar">先試髮，再預約。KPI 是 Try-on → Booking。</p>
     </footer>
 
     <script type="module" src="./js/app.js"></script>

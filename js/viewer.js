@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { t } from "./i18n.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
@@ -45,7 +46,7 @@ function frameObject(object, camera, controls) {
 
 function showFallback(canvas, ui, status) {
   if (canvas) canvas.hidden = true;
-  if (status) status.textContent = "此瀏覽器無法建立 WebGL。";
+  if (status) status.textContent = t("model.webgl");
   const bar = ui?.querySelector(".bar");
   if (bar) bar.hidden = true;
 }
@@ -135,11 +136,11 @@ export function createViewer({ canvas, status, bar, ui, reset, src }) {
     (event) => {
       if (!event.total) return;
       const pct = Math.round((event.loaded / event.total) * 100);
-      if (status) status.textContent = `載入 3D 模型 ${pct}%`;
+      if (status) status.textContent = t("model.loadingPct", { pct });
       if (bar) bar.style.width = `${Math.max(8, pct)}%`;
     },
     () => {
-      if (status) status.textContent = "模型載入失敗，請重新整理。";
+      if (status) status.textContent = t("model.fail");
     },
   );
 

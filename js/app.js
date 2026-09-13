@@ -1,23 +1,28 @@
 import { createViewer } from "./viewer.js";
+import { initI18n, t } from "./i18n.js";
 
-const VIEWS = [
-  {
-    src: "./swap-img-result/crop/01_front.png",
-    alt: "換髮結果，正面",
-  },
-  {
-    src: "./swap-img-result/crop/02_left_45.png",
-    alt: "換髮結果，左 45 度",
-  },
-  {
-    src: "./swap-img-result/crop/03_right_45.png",
-    alt: "換髮結果，右 45 度",
-  },
-  {
-    src: "./swap-img-result/crop/04_back.png",
-    alt: "換髮結果，背面",
-  },
+initI18n();
+
+const VIEW_KEYS = [
+  "look.alt.front",
+  "look.alt.left",
+  "look.alt.right",
+  "look.alt.back",
 ];
+
+const VIEW_SRC = [
+  "./swap-img-result/crop/01_front.png",
+  "./swap-img-result/crop/02_left_45.png",
+  "./swap-img-result/crop/03_right_45.png",
+  "./swap-img-result/crop/04_back.png",
+];
+
+function views() {
+  return VIEW_KEYS.map((key, i) => ({
+    src: VIEW_SRC[i],
+    alt: t(key),
+  }));
+}
 
 function setupTurntable(root) {
   const image = root.querySelector("[data-view]");
@@ -28,8 +33,9 @@ function setupTurntable(root) {
   let timer = 0;
 
   const show = (next) => {
-    index = (next + VIEWS.length) % VIEWS.length;
-    const view = VIEWS[index];
+    const list = views();
+    index = (next + list.length) % list.length;
+    const view = list[index];
     image.src = view.src;
     image.alt = view.alt;
     buttons.forEach((button, i) => {
@@ -90,11 +96,12 @@ function setupTurntable(root) {
     }
   });
 
-  VIEWS.forEach(({ src }) => {
+  VIEW_SRC.forEach((src) => {
     const preload = new Image();
     preload.src = src;
   });
 
+  document.addEventListener("langchange", () => show(index));
   play();
 }
 
@@ -104,6 +111,7 @@ if (table) setupTurntable(table);
 const modelSection = document.querySelector("#model");
 const modelToggle = document.querySelector("[data-model-toggle]");
 let viewerReady = false;
+let modelOpen = false;
 
 function ensureViewer() {
   if (viewerReady) return;
@@ -120,8 +128,9 @@ function ensureViewer() {
 
 function setModelOpen(open) {
   if (!modelSection || !modelToggle) return;
+  modelOpen = open;
   modelSection.hidden = !open;
-  modelToggle.textContent = open ? "收起 3D 人像" : "展開 3D 人像";
+  modelToggle.textContent = t(open ? "foot.modelCollapse" : "foot.modelExpand");
   modelToggle.setAttribute("aria-expanded", String(open));
   if (open) {
     ensureViewer();
@@ -133,3 +142,8 @@ modelToggle?.addEventListener("click", () => {
   setModelOpen(modelSection.hidden);
 });
 
+document.addEventListener("langchange", () => {
+  if (modelToggle) {
+    modelToggle.textContent = t(modelOpen ? "foot.modelCollapse" : "foot.modelExpand");
+  }
+});
