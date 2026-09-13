@@ -15,17 +15,28 @@ ezHairSwap 把這條路縮成：**自己的照片 + 想要的髮型 → 先試�
 
 ## 先看 Demo
 
-👉 **[打開 Live Demo](https://giorno-giovanna-dio.github.io/ezHairSwap/)**
+這支影片來自 `3d-model/video-demo/螢幕錄影 2026-09-14 凌晨12.56.43.mov`，已轉成 GitHub 可播放的 MP4（README 不支援直接內嵌 `.mov`）。
 
-這支錄影是網站上的實際操作：**bombhair 換到女生頭上 → 四視角試看 → 展開 3D bust 旋轉**。
+**bombhair 換到女生頭上 → 四視角試看 → 展開 3D bust 旋轉**
 
 <p align="center">
-  <video src="docs/demo/try-on-3d-demo.mp4" width="420" autoplay loop muted playsinline controls poster="docs/demo/try-on-3d-demo-poster.jpg">
-    <source src="docs/demo/try-on-3d-demo.mp4" type="video/mp4">
-  </video>
+  <video
+    src="https://github.com/Giorno-Giovanna-Dio/ezHairSwap/raw/main/docs/demo/try-on-3d-demo.mp4"
+    width="420"
+    controls
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="https://github.com/Giorno-Giovanna-Dio/ezHairSwap/raw/main/docs/demo/try-on-3d-demo-poster.jpg"
+  ></video>
 </p>
 
-<p align="center"><sub>2D 試髮轉盤 · 可收合的 3D 人像檢視器</sub></p>
+<p align="center">
+  <sub>2D 試髮轉盤 · 可收合的 3D 人像檢視器 · <a href="docs/demo/try-on-3d-demo.mp4">若無法播放，點此開啟 MP4</a></sub>
+</p>
+
+👉 **[打開 Live Demo](https://giorno-giovanna-dio.github.io/ezHairSwap/)**（需已啟用 GitHub Pages，見下方說明）
 
 ---
 
@@ -111,7 +122,9 @@ npm start
 
 瀏覽器打開 [http://localhost:4173](http://localhost:4173)。
 
-純靜態站，GitHub Pages 從 repo 根目錄發布即可上線。
+純靜態站。push 到 `main` 後，`.github/workflows/pages.yml` 會部署 GitHub Pages。
+
+若 Live Demo 出現 404，到 repo **Settings → Pages → Build and deployment**，將 **Source** 設為 **GitHub Actions**，再重新 push 或手動執行 workflow。
 
 ---
 
