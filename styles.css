@@ -191,12 +191,16 @@ h3 {
 }
 
 h1 {
-  max-width: 16ch;
+  max-width: none;
   font-size: clamp(32px, 5vw, 48px);
 }
 
 h1 span {
-  display: block;
+  display: inline;
+}
+
+h1 span + span::before {
+  content: " ";
 }
 
 h2 {
@@ -371,21 +375,26 @@ h2 {
   font-weight: 900;
 }
 
-.preview {
-  margin: 28px 0 0;
+.section > .preview {
+  width: min(720px, calc(100% - var(--gutter) * 2));
+  margin: 28px auto 0;
   padding-bottom: 8px;
+  text-align: center;
 }
 
 .preview-kicker {
-  margin: 16px 16px 0;
+  margin: 16px auto 0;
 }
 
 .preview .turntable {
   padding: 0 16px 8px;
+  width: 100%;
 }
 
 .preview .stage {
   width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
   box-shadow: none;
 }
 
@@ -409,6 +418,7 @@ h2 {
 .preview figcaption {
   padding: 0 20px 18px;
   color: var(--muted);
+  text-align: center;
 }
 
 .quad {
@@ -864,6 +874,14 @@ h2 {
   h1 {
     max-width: none;
     margin-inline: auto;
+  }
+
+  h1 span:first-child {
+    display: block;
+  }
+
+  h1 span + span::before {
+    content: none;
   }
 
   .hero-actions {
