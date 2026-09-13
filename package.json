@@ -1,0 +1,8 @@
+{
+  "name": "ez-hair-swap",
+  "private": true,
+  "description": "Demo site for trying a hairstyle before you talk to your barber.",
+  "scripts": {
+    "start": "python3 -m http.server 4173"
+  }
+}

@@ -7,3 +7,8 @@ dist/
 .next/
 .vercel/
 *.log
+docs/demo/frames/
+docs/demo/site-*.png
+
+# Meshy 原始輸出太大，網站改用壓縮後的 bust.glb
+3d-model/Meshy_AI_*.glb
